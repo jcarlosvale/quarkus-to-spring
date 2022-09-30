@@ -1,5 +1,6 @@
 package com.learning.marcianosQuarkusToSpring.service;
 
+import com.learning.marcianosQuarkusToSpring.AlgumSingleton;
 import com.learning.marcianosQuarkusToSpring.dto.UserRequest;
 import com.learning.marcianosQuarkusToSpring.dto.UserResponse;
 import com.learning.marcianosQuarkusToSpring.model.Conta;
@@ -83,5 +84,13 @@ public class UserService {
     public Conta saveConta(Conta conta) {
         contaRepository.save(conta);
         return conta;
+    }
+
+    public void print() {
+        AlgumSingleton algumSingleton = AlgumSingleton.getInstance();
+        System.out.println("teste de runner " + algumSingleton);
+
+        algumSingleton = AlgumSingleton.getInstance();
+        System.out.println("teste de runner " + algumSingleton);
     }
 }
